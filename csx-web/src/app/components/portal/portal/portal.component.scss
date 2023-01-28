@@ -1,0 +1,42 @@
+
+
+
+// text in middle in button
+.testMiddleInbutton {
+    display: inline-flex;
+    align-items: center; 
+}
+
+// sub heading buttons
+.subHeadingButton{
+    color:blue;
+    height: 25px;
+    padding:3px
+}
+
+//***
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+  width: 133.33333%;
+}
+
+.ContentDiv{
+    width:90%;
+    margin: auto;
+    background-color: greenyellow;
+}
+
+
+
+
+.old{color:green}
+.new{color:red}
+
+.aaaone{color:red}
+.bbbone{color:yellow}
+
+.aaatwo{color:red}
+.bbbtwo{color:yellow}

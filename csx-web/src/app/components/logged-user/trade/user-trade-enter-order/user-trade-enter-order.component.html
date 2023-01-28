@@ -1,0 +1,179 @@
+
+<div fxLayout="row" style="padding: 5px;">
+    <mat-card fxFlex="30%" class="mat-card-form">
+      <mat-card-header class="mat-card-form-header app-form-header">
+        <mat-card-title>Order Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column" fxLayoutGap="20px;">
+        <form [formGroup]="frmPostOrder">
+            <table>
+                <tr>
+                    <td>
+                        Transaction
+                    </td>
+                    <td>
+                        <mat-radio-group formControlName="cAction">
+                            <mat-radio-button value="BUY">BUY</mat-radio-button>
+                            <mat-radio-button value="SELL">SELL</mat-radio-button>
+                            <mat-error  *ngIf="frmStockSearchControls.cAction.errors">  
+                              <mat-error style="font-size: smaller;color: red;" *ngIf="frmStockSearchControls.cAction.errors.required">Select action: BUY or SELL</mat-error>
+                            </mat-error>
+                        </mat-radio-group>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Board
+                    </td>
+                    <td>
+                        <mat-radio-group formControlName="cBoard">
+                            <mat-radio-button value="MAIN" [checked]="true">MAIN</mat-radio-button>
+                            <mat-radio-button value="ODDLOT">ODDLOT</mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Term
+                    </td>
+                    <td>
+                        <mat-radio-group formControlName="cTerm">
+                            <mat-radio-button value="DAY" [checked]="true">DAY</mat-radio-button>
+                            <mat-radio-button value="CGT">CGT</mat-radio-button>
+                            <mat-radio-button value="ATC">ATC</mat-radio-button>
+                            <mat-error  *ngIf="frmStockSearchControls.cTerm.errors">  
+                              <mat-error style="font-size: smaller;color: red;" *ngIf="frmStockSearchControls.cTerm.errors.required">Select Term</mat-error>
+                            </mat-error>
+                        </mat-radio-group>
+                    </td>
+                    <tr>
+                        <td style="text-align:right;">
+                          Stock
+                        </td>
+                        <td>
+                          <mat-form-field appearance="outline">
+                            <input  matInput  formControlName="cStockCode">
+                            <mat-error  *ngIf="frmStockSearchControls.cStockCode.errors">  
+                              <mat-error style="font-size: smaller;color: red;" *ngIf="frmStockSearchControls.cStockCode.errors.required">Stock Code required</mat-error>
+                            </mat-error>
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;">
+                          # of Shares
+                        </td>
+                        <td>
+                          <mat-form-field appearance="outline">
+                                  <input  matInput  formControlName="cSize">
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;">
+                          Price
+                        </td>
+                        <td>
+                          <mat-form-field appearance="outline">
+                                  <input  matInput  formControlName="cPrice">
+                          </mat-form-field>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:right;">
+                          Net
+                        </td>
+                        <td>
+                          <mat-form-field appearance="outline">
+                                  <input  matInput  formControlName="cNetAmount">
+                          </mat-form-field>
+                        </td>
+                      </tr>
+            </table>
+            <div> <!--(click)="saveOrder()" "onPaymentModes('Card')" previewOrder() fillOrder()-->
+                <button mat-raised-button class="app-button" (click)="previewOrder()">Preview</button> 
+                <button mat-raised-button class="app-button" (click)="clearOrder()">Clear</button>  
+            </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <div fxFlex="30%" style="background-color:brown;">
+        ee
+    </div>
+    <div fxFlex="40%" style="background-color: tan;">
+        dd
+    </div>    
+</div>
+
+<!-- 
+<div *ngIf="_PreviewOrder"  style="background-color: green;">
+  <p>PREVIEW ORDER (Step 2 of 3)</p>
+  <hr style="width:650px;background-color:red;float:left"><br>
+  <p>Important: You are placing a Main board BUY/New Order. Please review before placing.</p>
+  <p>Click here if you want to modify Order Details</p>
+  <div fxLayout="column" style="width:650px">
+    <div fxFlex style="background-color: blue;color:white;height: 15px;width:650px">BUYING</div>
+    <div fxFlex fxLayout="row"  fxLayoutAlign="start center"  fxLayoutGap="5px" style="width: 600px;padding:5px;">
+      <div>
+        <table>
+          <th>Order Details</th>
+          <tr>
+            <td style="width:60%">Transaction</td><td>.</td>
+          </tr>
+          <tr>
+            <td style="width:60%">Board</td><td style="width:40%">.</td>
+          </tr>
+          <tr>
+            <td style="width:60%">Stock Code</td><td style="width:40%">.</td>
+          </tr>
+          <tr>
+            <td style="width:60%">Term</td><td style="width:40%">.</td>
+          </tr>
+          <tr>
+            <td>Valid until</td><td style="width:40%">.</td>
+          </tr>
+          <tr>
+            <td>No. of Shares</td><td style="width:40%">{{this.order.size}}</td>
+          </tr>
+          <tr>
+            <td style="width:60%">Price</td><td style="width:40%">.</td>
+          </tr>
+          <tr>
+            <td>Gross Amount</td><td style="width:40%">.</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+          <table>
+            <th>Order Charges</th>
+            <tr>
+              <td style="width:60%">Commission</td><td>.</td>
+            </tr>
+            <tr>
+              <td style="width:60%">Commission VAT</td><td style="width:40%">.</td>
+            </tr>
+            <tr>
+              <td style="width:60%">Transfer Fee</td><td style="width:40%">.</td>
+            </tr>
+            <tr>
+              <td style="width:60%">Cancellation Fee</td><td style="width:40%">.</td>
+            </tr>
+          </table>
+      </div>
+    </div>
+    <div  fxFlex>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"  style="width:330px;margin: 0 auto;">
+        <div fxFlex>
+          <button mat-raised-button class="app-button">Place Order</button>
+          </div>
+        <div fxFlex>
+            <button mat-raised-button class="app-button">Edit Order</button>
+        </div>
+        <div fxFlex>
+          <button mat-raised-button class="app-button" (click)="enterOrder()">Cancel Order</button>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->

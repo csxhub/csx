@@ -1,0 +1,244 @@
+<div  fxLayout="column" fxLayoutGap="0.2%" class="gcFrameLayout">
+    <div fxFlex="70%" >
+<!--viewTradeTab('');-->
+      <div fxLayout="row" fxLayoutGap="5px" style="width:300px;height: 40px;">
+        <div fxFlex (click)="emptyStockCodeStorage();toggleTab('Home');" [ngClass]="{'TabHomeOn': homeOn,'TabHomeOff':homeOff}" class="TabGeneral TabHomeOn TabHomeOff"><span class="TabGeneralSpan">Home</span></div>
+        <div fxFlex (click)="emptyStockCodeStorage();toggleTab('Quotes');" [ngClass]="{'TabQuotesOn': quotesOn,'TabQuotesOff':quotesOff}" class="TabGeneral TabQuotesOn TabQuotesOff"><span class="TabGeneralSpan">Quotes</span></div>
+        <div fxFlex (click)="emptyStockCodeStorage();toggleTab('Trade');" [ngClass]="{'TabTradeOn': tradeOn,'TabTradeOff':tradeOff}" class="TabGeneral TabTradeOn TabTradeOff"><span class="TabGeneralSpan">Trade</span></div>     
+      </div>
+      <div *ngIf="_viewHomeTab" >
+        <div class="subHeadingsBarOuter">
+          <div  fxLayout="row" fxLayoutGap="5px" class="subHeadingsBarInner">
+            <div  fxFlex class="div-button"  (click)="openHomeHome('');">Inquiry</div> 
+            <div fxFlex class="div-button"   (click)="openHomeProducts('');">Products</div>
+            <div  fxFlex class="div-button"   (click)="openHomeInvestorRelations('');">Investor Relations</div>
+            <div fxFlex class="div-button"   (click)="openHomeCareer('');">Career</div>
+            <div  fxFlex class="div-button"   (click)="openHomeMySettings('');">My Settings</div>
+            <div fxFlex class="div-button"   (click)="openHomeChangeProfile('');">Change Profile</div>
+            <div  fxFlex class="div-button"  (click)="openHomeDownloads('');">Downloads</div>
+            <div fxFlex class="div-button"  (click)="openHomeContactUs('');">Contact Us</div>
+          </div>
+        </div>
+        <div class="ContentDiv">
+         <!-- <user-home-home *ngIf="_openHomeHome" ></user-home-home>--> 
+       <!--<user-home-home-starter *ngIf="_openHomeHome" ></user-home-home-starter>--> 
+          <user-home-products *ngIf="_openHomeProducts"></user-home-products> 
+          <user-home-investor-relations *ngIf="_openHomeInvestorRelations" ></user-home-investor-relations>
+          <user-home-career *ngIf="_openHomeCareer"></user-home-career>
+          <user-home-my-settings *ngIf="_openHomeMySettings" ></user-home-my-settings>
+          <user-home-change-profile *ngIf="_openHomeChangeProfile"></user-home-change-profile>
+          <user-home-downloads *ngIf="_openHomeDownloads" ></user-home-downloads>
+          <user-home-contact-us *ngIf="_openHomeContactUs"></user-home-contact-us>
+        </div>
+       <!-- <div fxFlex (click)="viewQuotesTab('');toggleTab('Quotes');" [ngClass]="{'TabQuotesOn': quotesOn,'TabQuotesOff':quotesOff}" class="TabGeneral TabQuotesOn TabQuotesOff"><span class="TabGeneralSpan">Quotes</span></div>
+       -->
+  
+<div fxLayout="row" *ngIf="_openHomeHome" >
+  
+    <!-- panel gauche -->
+    <div fxFlex="60%" fxLayout="column">
+      <div fxFlex *ngIf="stock !== undefined"  style="padding: 5px; border: 1px green solid">
+        <table style="width:90%;height: 90%;border-collapse: separate;border: 1px solid white;">
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+        </table>
+      </div>
+      <div fxFlex *ngIf="stock !== undefined"  style="padding: 5px; border: 1px green solid">
+        <table style="width:90%;height: 90%;border-collapse: separate;border: 1px solid white;">
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+        </table>
+      </div>
+      <div fxFlex *ngIf="stock !== undefined"  style="padding: 5px; border: 1px green solid">
+        <table style="width:90%;height: 90%;border-collapse: separate;border: 1px solid white;">
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockDescription}} </td>
+            <td style="text-align:center;color:green;font-weight:bold;font-size: 14pt;width:33%;border:1px white solid">{{stock.stockCode}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- panel droite -->
+    <div  fxFlex="40%" fxLayout="column"  style="padding: 3px;">
+      <div fxFlex fxLayout="column" style="background-color: burlywood;padding:3px;">
+        <mat-card fxFlex style="padding: 5px;border: 1px green solid">
+                <form [formGroup]="frmStockSearch" style="background-color: aquamarine;">
+                    <table style="width:100%">
+                        <tr>
+                          <td style="text-align:right;">
+                            Stock
+                          </td>
+                          <td>
+                            <mat-form-field appearance="outline">
+                                    <input  matInput  formControlName="cStockCode">
+                            </mat-form-field>
+                          </td>
+                          <td style="text-align: center;">
+                              <button mat-raised-button class="app-button" (click)="onStockSearch()">QUOTE</button>
+                          </td>
+                          <td style="text-align:center">
+                              <span>BUY</span>&nbsp;&nbsp;&nbsp;<span>SELL</span>
+                          </td>
+                        </tr>
+                    </table>
+                </form>
+              </mat-card>
+        <div fxFlex style="background-color: chartreuse;color:red;font-size: 20pt;text-align: center;">
+          {{stock.stockDescription}}
+        </div>
+        <div fxFlex fxLayout="column" style="background-color:aquamarine">  
+          <div fxFlex fxLayout="row" style="width:100%">  
+
+            <div  fxFlex="50%" fxLayout="column">
+              <div fxFlex style="border: 1px green solid;">Bid</div>  
+              <div fxFlex style="border: 1px green solid;">
+                <table mat-table [dataSource]="dsStockBid" style="width:100%">
+                  <ng-container matColumnDef="NumberOfBuyers">
+                    <th mat-header-cell *matHeaderCellDef>Count</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaCount}}</td>
+                  </ng-container>
+                  <ng-container matColumnDef="Size">
+                    <th mat-header-cell *matHeaderCellDef>Bid Size</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaSize}}</td>
+                  </ng-container>
+                  <ng-container matColumnDef="Price">
+                    <th mat-header-cell *matHeaderCellDef>Bid Price</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaPrice}}</td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="dsStockBidColumns" style="background-color: green; height:10px;padding:0px;" ></tr>
+                  <tr mat-row *matRowDef="let row; columns: dsStockBidColumns;"  style="background-color: yellow; height:25px;"></tr>
+                </table>
+              </div>
+            </div>
+
+            <div  fxFlex="50%" fxLayout="column">
+              <div fxFlex style="border: 1px green solid;">Ask</div>
+              <div fxFlex  style="border: 1px green solid">
+                <table mat-table [dataSource]="dsStockAsk" style="width:100%">
+                  <ng-container matColumnDef="Price">
+                    <th mat-header-cell *matHeaderCellDef>Ask Price</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaPrice}}</td>
+                  </ng-container>
+                  <ng-container matColumnDef="Size">
+                    <th mat-header-cell *matHeaderCellDef>Ask Size</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaSize}}</td>
+                  </ng-container>
+                  <ng-container matColumnDef="NumberOfSellers">
+                    <th mat-header-cell *matHeaderCellDef>Count</th>
+                    <td mat-cell *matCellDef="let element">{{element.sbaCount}}</td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="dsStockAskColumns" style="background-color: green; height:10px;padding:0px;" ></tr>
+                  <tr mat-row *matRowDef="let row; columns: dsStockAskColumns;"  style="background-color: yellow; height:25px;"></tr>
+                </table>
+              </div>
+            </div>  
+
+          </div>
+        </div>
+        <div fxFlex style="width:100%;">
+          <table  style="border-collapse: collapse;border: 1px solid red;width:100%">
+            <tr>
+              <td style="border: 1px green solid">Open</td>
+              <td>233</td>
+              <td style="border: 1px green solid">High</td>
+              <td>565</td>
+              <td style="border: 1px green solid">Low</td>
+              <td>54775</td>
+            </tr>
+            <tr>
+              <td style="border: 1px green solid">Trades</td>
+              <td><div (click)="viewStockDetailed()" style="background-color: yellow;color: red;">567</div></td>
+              <td style="border: 1px green solid">Value</td>
+              <td>535</td>
+              <td style="border: 1px green solid">Volume</td>
+              <td><div (click)="viewStockDetailed()" style="background-color: yellow;color: red;">6446</div></td>
+            </tr>
+          </table>
+        </div>
+        <div fxFlex fxLayout="column" style="width:100%;padding:5px;margin:0 auto;border: 1px green solid">
+          <div fxFlex="30px"  fxLayout="row" fxLayoutGap="5px" style="padding:0px;width:100%;background-color: white;" class="subHeadingsBarInner">
+            <div fxFlex (click)="viewStocksTab('Actives');getStocksOn();getStockSummaries('_active_stocks')" [ngClass]="{'TabActivesOn': activesTabOn,'TabActivesOff':activesTabOff}" class="TabGeneral TabActivesOn TabActivesOff"><span class="TabGeneralSpan">Actives</span></div>
+            <div fxFlex (click)="viewStocksTab('Gainers');getStocksOff();getStockSummaries('_gainer_stocks')" [ngClass]="{'TabGainersOn': gainersTabOn,'TabGainersOff':gainersTabOff}" class="TabGeneral TabGainersOn TabGainersOff"><span class="TabGeneralSpan">Gainers</span></div>
+            <div fxFlex (click)="viewStocksTab('Losers');getStocksOn();getStockSummaries('_loser_stocks')" [ngClass]="{'TabLosersOn': losersTabOn,'TabLosersOff':losersTabOff}" class="TabGeneral TabLosersOn TabLosersOff"><span class="TabGeneralSpan">Losers</span></div>   
+            <div fxFlex (click)="viewStocksTab('Markets');getStocksOff();" [ngClass]="{'TabMarketsOn': marketsTabOn,'TabMarketsOff':marketsTabOff}" class="TabGeneral TabMarketsOn TabMarketsOff"><span class="TabGeneralSpan">Markets</span></div>
+            <div fxFlex (click)="viewStocksTab('Portfolios');getStocksOn();" [ngClass]="{'TabPortfoliosOn': portfoliosTabOn,'TabPortfoliosOff':portfoliosTabOff}" class="TabGeneral TabPortfoliosOn TabPortfoliosOff"><span class="TabGeneralSpan">Portfolios</span></div>      
+          </div>
+          <div fxFlex  style="width:100%;background-color: white;border: 1px solid gray;" >
+            {{stocksTabMessage}}
+          </div>
+          <div fxFlex  style="width:100%;" >
+            <table mat-table [dataSource]="dsStockSummaries" style="width:100%;border:1px gray solid">
+              <ng-container matColumnDef="Stock">
+                <th mat-header-cell *matHeaderCellDef style="border:1px gray solid">Stock</th>
+                <td mat-cell *matCellDef="let element" style="border:1px gray solid">
+                  <button (click)="loadStockCode(element.ssaStockCode);toggleTab('Quotes');">{{element.ssaStockCode}}</button>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="Value">
+                <th mat-header-cell *matHeaderCellDef   style="border:1px gray solid">Value</th>
+                <td mat-cell *matCellDef="let element"  style="border:1px gray solid" >
+                  {{element.ssaValue}}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="Last">
+                <th mat-header-cell *matHeaderCellDef  style="border:1px gray solid" >Last</th>
+                <td mat-cell *matCellDef="let element"   style="border:1px gray solid">{{element.ssaLast}}</td>
+              </ng-container> 
+              <ng-container matColumnDef="Change">
+                <th mat-header-cell *matHeaderCellDef  style="border:1px gray solid" >Change</th>
+                <td mat-cell *matCellDef="let element"   style="border:1px gray solid">{{element.ssaChange}}</td>
+              </ng-container> 
+              <ng-container matColumnDef="PercChange">
+                <th mat-header-cell *matHeaderCellDef  style="border:1px gray solid" >% Change</th>
+                <td mat-cell *matCellDef="let element"   style="border:1px gray solid">{{element.ssaPercentageChange}}</td>
+              </ng-container> 
+              <tr mat-header-row *matHeaderRowDef="dsStockSummariesColumns" style="background-color: blue;color:white; height:10px;padding:0px;" ></tr>
+            <tr mat-row *matRowDef="let row; columns: dsStockSummariesColumns;"  style="height:25px;"></tr>
+            </table>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="_openHomeHomeStockDetailed">
+    Stocke detailed...
+  </div>
+
+      </div>
+
+      <div  *ngIf="_viewQuotesTab"> 
+        <user-quotes-home></user-quotes-home>
+      </div>
+
+      <div  *ngIf="_viewTradeTab"> 
+        <user-trade-home ></user-trade-home>
+      </div>
+   
+      </div>
+
+    <!--   <portal-footer fxFlex="5%" style="background-color:aqua;"></portal-footer>  -->
+
+</div>

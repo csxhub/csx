@@ -1,0 +1,15 @@
+
+  <div class="subHeadingsBarOuter">
+    <div flexLayout="row" fxLayoutGap="3px" class="subHeadingsBarInner">
+      <div  fxFlex class="div-button"  (click)="openStockInformation('');" [ngClass]="{'TabHomeOn': homeOn,'TabHomeOff':homeOff}" class="TabGeneral TabHomeOn TabHomeOff"><span class="TabGeneralSpan">Stock Information</span></div>
+      <div  fxFlex class="div-button"  (click)="openMarketInformation('');" [ngClass]="{'TabQuotesOn': quotesOn,'TabQuotesOff':quotesOff}" class="TabGeneral TabQuotesOn TabQuotesOff"><span class="TabGeneralSpan">Market Information</span></div>
+      <div  fxFlex class="div-button"  (click)="openBrokerInformation('');"  [ngClass]="{'TabTradeOn': tradeOn,'TabTradeOff':tradeOff}" class="TabGeneral TabTradeOn TabTradeOff"><span class="TabGeneralSpan">Broker Information</span></div>
+    </div>
+  </div>
+  <div class="ContentDiv">
+      <user-quotes-stock-information *ngIf="_openStockInformation" class="ContentDiv"></user-quotes-stock-information>
+      <user-quotes-market-information *ngIf="_openMarketInformation"  class="ContentDiv"></user-quotes-market-information> 
+      <user-quotes-broker-information *ngIf="_openBrokerInformation"  class="ContentDiv"></user-quotes-broker-information> 
+  </div>  
+  
+  

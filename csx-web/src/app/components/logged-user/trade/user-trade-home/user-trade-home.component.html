@@ -1,0 +1,24 @@
+
+
+<div class="subHeadingsBarOuter">
+    <div flexLayout="row" fxLayoutGap="3px" class="subHeadingsBarInner">
+      <div  fxFlex class="div-button"  (click)="openTradeEnterOrder('');">Enter Order</div>
+      <div  fxFlex class="div-button"  (click)="openTradeViewModifyOrder('');">View/Modify Order</div>
+      <div  fxFlex class="div-button"  (click)="openTradeTradingHistory('');">Trading History</div>
+      <div  fxFlex class="div-button"  (click)="openTradePortrfolio('');">Portrfolio</div>
+      <div  fxFlex class="div-button"  (click)="openTradeOHOrder('');">OH Order</div>
+      <div  fxFlex class="div-button"  (click)="openTradeOHViewCancel('');">OH View/Cancel</div>
+      <div  fxFlex class="div-button"  (click)="openTradeEIPScheduler('');">EIP Scheduler</div>
+    </div>
+</div>
+<div class="ContentDiv">
+     <user-trade-home *ngIf="_openTradeHome" class="ContentDiv"></user-trade-home>
+      <user-trade-enter-order *ngIf="_openTradeEnterOrder" class="ContentDiv"></user-trade-enter-order>
+      <user-trade-view-modify-order *ngIf="_openTradeViewModifyOrder" class="ContentDiv"></user-trade-view-modify-order>
+      <user-trade-trading-history *ngIf="_openTradeTradingHistory" class="ContentDiv"></user-trade-trading-history>
+      <user-trade-portfolio *ngIf="_openTradePortrfolio" class="ContentDiv"></user-trade-portfolio>
+      <user-trade-oh-order *ngIf="_openTradeOHOrder" class="ContentDiv"></user-trade-oh-order>
+      <user-trade-oh-view-cancel *ngIf="_openTradeOHViewCancel" class="ContentDiv"></user-trade-oh-view-cancel>
+      <user-trade-eip-scheduler *ngIf="_openTradeEIPScheduler" class="ContentDiv"></user-trade-eip-scheduler>
+</div>
+

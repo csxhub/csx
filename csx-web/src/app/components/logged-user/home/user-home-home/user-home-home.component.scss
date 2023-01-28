@@ -1,0 +1,135 @@
+
+
+
+    ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+        color:red;
+        background-color: green;
+        //border: 2px black solid;
+        //border: 10px;
+        //height: 20px;
+        }
+        
+        ::ng-deep .mat-tab-list .mat-tab-labels {
+        color:blue;
+        background-color: yellow;
+        //border: 2px black solid;
+        //border: 10px;
+        }
+        
+        .subHeadingsBarOuter{
+            width:100%;
+            background-color: green;
+        }
+
+        .subHeadingsBarInner{
+            width:85%;
+            background-color: green;
+            padding: 5px;
+        }
+        
+        .div-button{
+            background-color: darkorange;
+            color: blue;
+            border-radius: 2%;
+            text-align:center;
+            padding: 3px;
+            display: inline-block;
+            border:2px solid white;
+        }
+
+
+
+
+
+
+
+        // text in middle in button
+    .testMiddleInbutton {
+        display: inline-flex;
+        align-items: center; 
+    }
+
+    // sub heading buttons
+    .subHeadingButton{
+        color:blue;
+        height: 25px;
+        padding:3px
+    }
+
+    .ContentDiv{
+        width:90%;
+        margin: auto;
+        background-color: greenyellow;
+    }
+
+    .TabGeneral{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: inline-flex;align-items: center;
+    }
+
+    .TabGeneralSpan{
+        text-align: center; width:100%;
+        font-weight: bold;
+       // background-color:blueviolet
+    }
+    
+    
+
+    //* for divTabs toggling
+    .TabHomeOn{color:yellow;background-color: green;color:white;}
+    .TabHomeOff{color:white;background-color: gray;color:black}
+    .TabQuotesOn{color:yellow;background-color: green;color:white;}
+    .TabQuotesOff{color:white;background-color:gray;color:black}
+    .TabTradeOn{color:yellow;background-color: green;color:white;}
+    .TabTradeOff{color:white;background-color: gray;color:black}
+
+    //* for Stocks divTabs toggling
+    .TabActivesOn{color:yellow;background-color: green;color:white;}
+    .TabActivesOff{color:white;background-color: gray;color:black}
+    .TabGainersOn{color:yellow;background-color: green;color:white;}
+    .TabGainersOff{color:white;background-color:gray;color:black}
+    .TabLosersOn{color:yellow;background-color: green;color:white;}
+    .TabLosersOff{color:white;background-color: gray;color:black}
+    .TabMarketsOn{color:yellow;background-color: green;color:white;}
+    .TabMarketsOff{color:white;background-color:gray;color:black}
+    .TabPortfoliosOn{color:yellow;background-color: green;color:white;}
+    .TabPortfoliosOff{color:white;background-color: gray;color:black}
+
+    
+    //*
+    table {
+        border-collapse: collapse;margin: 0 auto;
+    }
+    table th {
+        text-align: center;
+    }    
+    table td, table th {
+        border: 1px solid blue;
+    }
+   // table tr:first-child th {
+    //    border-top: 0;
+   // }
+   // table tr:last-child td {
+  //      border-bottom: 0;
+   // }
+ //   table tr td:first-child,
+ //   table tr th:first-child {
+  //      border-left: 0;
+  //  }
+ //   table tr td:last-child,
+ //   table tr th:last-child {
+ //       border-right: 0;
+  //  }
+
+    .mat-footer-row,
+    .mat-header-row,
+    .mat-row {
+       // display: inline-flex;
+        max-height: 50px;
+    }
+    
+
+
+  
+ 

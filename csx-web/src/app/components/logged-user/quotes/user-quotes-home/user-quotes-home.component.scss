@@ -1,0 +1,49 @@
+
+    .subHeadingsBarOuter{
+        width:100%;
+        background-color: green;
+    }
+
+    .subHeadingsBarInner{
+        width:35%;
+        background-color: green;
+        padding: 5px;
+    }
+
+    /*
+    .div-button{
+        background-color: darkorange;
+        color: blue;
+        border-radius: 2%;
+        text-align:center;
+        padding: 3px;
+        display: inline-block;
+        border:2px solid white;
+    }  
+    */
+    
+    .ContentDiv{
+        width:90%;
+        margin: auto;
+        background-color: yellow;
+    }
+
+     //* for divTabs toggling
+     .TabHomeOn{
+        background-color: yellow;color: red;border:2px solid darkmagenta;
+    }
+    .TabHomeOff{
+        background-color: darkorange;color: blue;border-radius: 2%;text-align:center;padding: 3px;display: inline-block;border:2px solid white;
+    }
+    .TabQuotesOn{
+        background-color: yellow;color: red;border:2px solid darkmagenta;
+    }
+    .TabQuotesOff{
+        background-color: darkorange;color: blue;border-radius: 2%;text-align:center;padding: 3px;display: inline-block;border:2px solid white;
+    }
+    .TabTradeOn{
+        background-color: yellow;color: red;border:2px solid darkmagenta;
+    }
+    .TabTradeOff{
+        background-color: darkorange;color: blue;border-radius: 2%;text-align:center;padding: 3px;display: inline-block;border:2px solid white;
+    }

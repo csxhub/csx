@@ -1,0 +1,72 @@
+
+
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3'
+
+#Define services
+services:
+
+  #PostgreSQL Database for the application
+  csx-d-postgres:
+    #image: "postgres:9.6-alpine"
+    image: "postgres:11.17-alpine"
+    container_name: csx-d-postgres
+    #Volume mounted for database for the storage
+    volumes:
+      - csx-db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432" # Forward the exposed port 5432 on the container to port 5432 on the host machine
+
+    #Environment variable for DB name, user and password
+    environment:
+      - POSTGRES_DB=csx-d
+      - POSTGRES_USER=csx-d
+      - POSTGRES_PASSWORD=csx-d
+
+  #Back-end Spring Boot Application
+  csx-app:
+    #The docker file in scrum-app build the jar and provides the docker image with the following name.
+    build: ./csx-app
+    container_name: csx-app
+    restart: always
+    #Environment variables for Spring Boot Application.
+    environment:
+      - DB_SERVER=csx-d-postgres
+      - POSTGRES_DB=csx-d
+      - POSTGRES_USER=csx-d
+      - POSTGRES_PASSWORD=csx-d
+    ports:
+      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    links:
+      - csx-d-postgres
+
+  # In pgAdmin
+  # server name: csxserver(any) ,host: (csx-d-postgres),port: 5432(important),db: csx-d,  un: csx-d, pw:csx-d
+  #
+  csx-d-pgadmin:
+    image: dpage/pgadmin4
+    container_name: csx-d-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@absa.com
+      - PGADMIN_DEFAULT_PASSWORD=secret
+      #############- PGADMIN_LISTEN_PORT= 80
+    ports:
+      - "8086:80"
+    volumes:
+      - csx-db-pgadmin-data:/var/lib/pgadmin
+
+  #Fron-end Angular Application
+  csx-ui:
+     build: ./csx-web
+     container_name: csx-ui
+     ports:
+       - "4200:80"
+    # links:
+    #   - csx-d-app
+     depends_on:
+       - csx-app
+
+#Volumes for DB data
+volumes:
+  csx-db-data:
+  csx-db-pgadmin-data:

@@ -1,0 +1,73 @@
+
+<div mat-dialog-content>
+    <mat-card style="background-color:white;width:630px;height:350px;padding:0px;border: solid 1px rgb(71, 13, 196);">
+        <h1 mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragHandle class="app-form-header">&nbsp;<span style="font-size: 11pt;">Preview Order</span></h1>
+        <mat-card-content style="padding: 5px;">
+          <p>Important: You are placing a Main board BUY/New Order. Please review before placing.</p>
+            <div fxLayout="column" style="width:630px">
+                <div fxFlex style="background-color: blue;color:white;height: 15px;width:613px">BUYING</div>
+                <div fxFlex fxLayout="row"  fxLayoutAlign="center start"  fxLayoutGap="5px" style="width: 630px;padding:5px;">
+                    <div fxFlex>
+                        <table>
+                        <tr><td colspan="2">Order Details</td></tr>
+                        <tr>
+                            <td style="width:60%">Transaction</td><td>{{orderDetails.transaction}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:60%">Board</td><td style="width:40%">{{orderDetails.board}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:60%">Stock Code</td><td style="width:40%">{{orderDetails.stock}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:60%">Term</td><td style="width:40%">{{orderDetails.term}}</td>
+                        </tr>
+                        <tr>
+                            <td>Valid until</td><td style="width:40%">.</td>
+                        </tr>
+                        <tr>
+                            <td>No. of Shares</td><td style="width:40%">{{orderDetails.number_of_shares}}</td>
+                        </tr>
+                        <tr>
+                            <td style="width:60%">Price</td><td style="width:40%">{{orderDetails.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gross Amount</td><td style="width:40%">{{orderDetails.net_amount}}</td>
+                        </tr>
+                        </table>
+                    </div>
+                    <div  fxFlex>
+                        <table>
+                            <tr><td colspan="2">Order Charges</td></tr>
+                            <tr>
+                            <td style="width:60%">Commission</td><td>.</td>
+                            </tr>
+                            <tr>
+                            <td style="width:60%">Commission VAT</td><td style="width:40%">.</td>
+                            </tr>
+                            <tr>
+                            <td style="width:60%">Transfer Fee</td><td style="width:40%">.</td>
+                            </tr>
+                            <tr>
+                            <td style="width:60%">Cancellation Fee</td><td style="width:40%">.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div  fxFlex>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"  style="width:330px;margin: 0 auto;">
+                        <div fxFlex>
+                        <button mat-raised-button class="app-button" (click)="closeDialogProcess()">Place Order</button>
+                        </div>
+                        <div fxFlex>
+                            <button mat-raised-button class="app-button" style="float:right" (click)="closeDialogEdit()">Edit</button>
+                        </div>
+                        <div fxFlex>
+                            <button mat-raised-button class="app-button" (click)='closeDialogCancel()'>Cancel</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>    
+    </mat-card>
+</div>
