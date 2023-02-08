@@ -1,4 +1,4 @@
-name: first-workflow
+name: sometrytry
 on: workflow_dispatch
   #push:
    # branches:
