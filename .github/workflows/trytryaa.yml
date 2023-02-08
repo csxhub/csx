@@ -10,6 +10,11 @@ jobs:
       steps:
        -
          uses: actions/checkout@v1
+       - 
+          name: echo
+          run: |
+            ls -l
+            echo 'hi there'
 
     setupb:
        runs-on: ubuntu-latest
