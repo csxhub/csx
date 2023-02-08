@@ -8,8 +8,10 @@ jobs:
     setup:
       runs-on: ubuntu-latest
       steps:
-      - name: Setup
-      -   run: |
-           ls -l
+       -
+          name: echo
+          run: |
+            echo 'hi there'
+            ls -l
             
    
