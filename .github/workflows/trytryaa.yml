@@ -9,8 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Setup
-      -  uses: actions/checkout@v2
-      -  run: |
+      -   run: |
            ls -l
             
    
