@@ -9,9 +9,13 @@ jobs:
       runs-on: ubuntu-latest
       steps:
        -
+         uses: actions/checkout@v1
+         
+       -
+          
           name: echo
           run: |
-            echo 'hi there'
             ls -l
+            echo 'hi there'
             
    
