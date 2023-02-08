@@ -10,9 +10,11 @@ jobs:
       steps:
        -
          uses: actions/checkout@v1
-         
+
+    setupb:
+       runs-on: ubuntu-latest
+       steps:
        -
-          
           name: echo
           run: |
             ls -l
