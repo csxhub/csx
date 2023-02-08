@@ -1,0 +1,16 @@
+name: first-workflow
+on: workflow_dispatch
+  #push:
+   # branches:
+    #  - main
+jobs:
+
+    setup:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Setup
+      -  uses: actions/checkout@v2
+      -  run: |
+           ls -l
+            
+   
