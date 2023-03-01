@@ -38,7 +38,7 @@ services:
       - POSTGRES_USER=csx-d
       - POSTGRES_PASSWORD=csx-d
     ports:
-      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+      - "8090:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     links:
       - csx-d-postgres
 
