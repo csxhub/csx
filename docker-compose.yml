@@ -8,8 +8,10 @@ services:
 
   #PostgreSQL Database for the application
   csx-d-postgres:
+    image: csx-img-postgres
+    build: ./csx-postgres
     #image: "postgres:9.6-alpine"
-    image: "postgres:11.17-alpine"
+    #image: "postgres:11.17-alpine"
     container_name: csx-d-postgres
     #Volume mounted for database for the storage
     volumes:
@@ -57,6 +59,7 @@ services:
 
   #Fron-end Angular Application
   csx-ui:
+     image: uiui
      build: ./csx-web
      container_name: csx-ui
      ports:

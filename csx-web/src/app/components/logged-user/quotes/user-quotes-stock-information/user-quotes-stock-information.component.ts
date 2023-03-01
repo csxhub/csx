@@ -202,7 +202,7 @@ onOrderStockTransactionsByStockCode(code:string){
           if(data){
             this.stockSummaries=[];
             this.stockSummaries=data;
-           //// this.dsStockBid=this.stockBidAsks;
+           /// this.dsStockBid=this.stockBidAsks;
           }
           else{
            /// this.stockBidAsk=new StockBidAsk;
